@@ -25,28 +25,28 @@ var states;
             birdGameLabel.regY = birdGameLabel.getMeasuredHeight() * 0.5;
             this.game.addChild(birdGameLabel);
             // initiate and add gameoverlabel to game object 
-            var selectPlayerLabel = new objects.Label("SELECT PLAYER", constants.SCREEN_CENTER_WIDTH, 200);
-            selectPlayerLabel.font = "40px Consolas";
-            selectPlayerLabel.regX = selectPlayerLabel.getMeasuredWidth() * 0.5;
-            selectPlayerLabel.regY = selectPlayerLabel.getMeasuredHeight() * 0.5;
-            this.game.addChild(selectPlayerLabel);
+            var selectDifficultyLabel = new objects.Label("SELECT DIFFICULTY LEVEL", constants.SCREEN_CENTER_WIDTH, 200);
+            selectDifficultyLabel.font = "40px Consolas";
+            selectDifficultyLabel.regX = selectDifficultyLabel.getMeasuredWidth() * 0.5;
+            selectDifficultyLabel.regY = selectDifficultyLabel.getMeasuredHeight() * 0.5;
+            this.game.addChild(selectDifficultyLabel);
             // initiate and adding instructionbutton label to screen
-            this.easyButton = new objects.Button("redButton", constants.SCREEN_CENTER_WIDTH + 150, 400);
+            this.easyButton = new objects.Button("easybutton", constants.SCREEN_CENTER_WIDTH - 200, 400);
             this.game.addChild(this.easyButton);
-            this.easyButton.on("click", this.player1ButtonClicked, this);
+            this.easyButton.on("click", this.easyButtonClicked, this);
             // initiate and adding playbutton label to screen
-            this.mediumButton = new objects.Button("chuckButton", constants.SCREEN_CENTER_WIDTH - 150, 400);
+            this.mediumButton = new objects.Button("mediumbutton", constants.SCREEN_CENTER_WIDTH, 400);
             this.game.addChild(this.mediumButton);
-            this.mediumButton.on("click", this.player2ButtonClicked, this);
+            this.mediumButton.on("click", this.mediumButtonClicked, this);
             // initiate and adding playbutton label to screen
-            this.hardButton = new objects.Button("chuckButton", constants.SCREEN_CENTER_WIDTH - 150, 400);
+            this.hardButton = new objects.Button("hardbutton", constants.SCREEN_CENTER_WIDTH + 200, 400);
             this.game.addChild(this.hardButton);
-            this.hardButton.on("click", this.player2ButtonClicked, this);
+            this.hardButton.on("click", this.hardButtonClicked, this);
             // adding game object to stage
             stage.addChild(this.game);
         } // constructor end
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++
-        DifficultyLevel.prototype.player1ButtonClicked = function () {
+        DifficultyLevel.prototype.easyButtonClicked = function () {
             this.game.removeAllChildren();
             stage.removeChild(this.game);
             currentState = constants.PLAY_STATE;
@@ -54,7 +54,15 @@ var states;
             stateChanged = true;
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++
-        DifficultyLevel.prototype.player2ButtonClicked = function () {
+        DifficultyLevel.prototype.mediumButtonClicked = function () {
+            this.game.removeAllChildren();
+            stage.removeChild(this.game);
+            currentState = constants.PLAY_STATE;
+            birdSelected = constants.PLAYER2;
+            stateChanged = true;
+        };
+        // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++
+        DifficultyLevel.prototype.hardButtonClicked = function () {
             this.game.removeAllChildren();
             stage.removeChild(this.game);
             currentState = constants.PLAY_STATE;
@@ -69,4 +77,4 @@ var states;
     })();
     states.DifficultyLevel = DifficultyLevel;
 })(states || (states = {}));
-//# sourceMappingURL=difficultyLevel.js.map
+//# sourceMappingURL=difficultylevel.js.map

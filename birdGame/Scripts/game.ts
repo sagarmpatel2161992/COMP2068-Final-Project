@@ -21,6 +21,7 @@
 /// <reference path="states/gameover.ts" />
 /// <reference path="states/menu.ts" />
 /// <reference path="states/playerselect.ts" />
+/// <reference path="states/difficultylevel.ts" />
 /// <reference path="states/play.ts" />
 
 
@@ -51,13 +52,16 @@ var money: objects.Money[] = [];
 var enemy: objects.Enemy[] = [];
 var scoreboard: objects.ScoreBoard;
 var birdSelected: number;
+var difficultyLevelSelected: number;
 
 
 // State Objects
 var gameOver: states.GameOver;
 var play: states.Play;
 var selectPlayer: states.PlayerSelect;
+var difficultyLevel: states.DifficultyLevel;
 var menu: states.Menu;
+
 
 
 // asset manifest - array of asset objects
@@ -70,6 +74,9 @@ var manifest = [
     { id: "chuckButton", src: "assets/images/chuckButton.png" },
     { id: "redButton", src: "assets/images/redButton.png" },
     { id: "playbutton", src: "assets/images/playButton.png" },
+    { id: "easybutton", src: "assets/images/easyButton.png" },
+    { id: "mediumbutton", src: "assets/images/mediumButton.png" },
+    { id: "hardbutton", src: "assets/images/hardButton.png" },
     { id: "instructionbutton", src: "assets/images/instructionButton.png" }, 
     { id: "tryAgainButton", src: "assets/images/playagainbutton.png" },
     { id: "gameSound", src: "assets/audio/game.ogg" },  
@@ -140,6 +147,13 @@ function changeState(state: number) {
             selectPlayer = new states.PlayerSelect;
             currentStateFunction = selectPlayer;
             break;
+            
+        case constants.DIFFICULTY_LEVEL_STATE:
+            // Instantiate Play State
+            difficultyLevel = new states.DifficultyLevel;
+            currentStateFunction = difficultyLevel;
+            break;
+            
 
         case constants.GAME_OVER_STATE:
             // Instantiate Game Over State

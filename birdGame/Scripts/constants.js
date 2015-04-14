@@ -16,10 +16,15 @@ var constants;
     constants.ENEMY_NUM = 3;
     constants.PLAYER1 = 1;
     constants.PLAYER2 = 2;
+    // difficulty variable
+    constants.EASY = 1;
+    constants.MEDIUM = 2;
+    constants.HIGH = 3;
     // States Constants
     constants.MENU_STATE = 0;
-    constants.PLAY_STATE = 1;
-    constants.SELECT_PLAYER_STATE = 2;
-    constants.GAME_OVER_STATE = 3;
+    constants.SELECT_PLAYER_STATE = 1;
+    constants.DIFFICULTY_LEVEL_STATE = 2;
+    constants.PLAY_STATE = 3;
+    constants.GAME_OVER_STATE = 4;
 })(constants || (constants = {}));
 //# sourceMappingURL=constants.js.map

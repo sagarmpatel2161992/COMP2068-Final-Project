@@ -63,7 +63,7 @@ module states {
         player1ButtonClicked() {
             this.game.removeAllChildren();
             stage.removeChild(this.game);
-            currentState = constants.PLAY_STATE;
+            currentState = constants.DIFFICULTY_LEVEL_STATE;
             birdSelected = constants.PLAYER1;
             stateChanged = true;
         }
@@ -71,7 +71,7 @@ module states {
         player2ButtonClicked() {
             this.game.removeAllChildren();
             stage.removeChild(this.game);
-            currentState = constants.PLAY_STATE;
+            currentState = constants.DIFFICULTY_LEVEL_STATE;
             birdSelected = constants.PLAYER2;
             stateChanged = true;
         }

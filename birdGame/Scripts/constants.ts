@@ -17,12 +17,21 @@
     export var ENEMY_NUM: number = 3;
     export var PLAYER1: number = 1;
     export var PLAYER2: number = 2;
+
+    // difficulty variable
+    export var EASY: number = 1;
+    export var MEDIUM: number = 2;
+    export var HIGH: number = 3;
+
+
+
   
 
     // States Constants
-    export var MENU_STATE: number = 0;
-    export var PLAY_STATE: number = 1;
-    export var SELECT_PLAYER_STATE: number = 2;
-    export var GAME_OVER_STATE: number = 3;
+    export var MENU_STATE: number = 0;    
+    export var SELECT_PLAYER_STATE: number = 1;
+    export var DIFFICULTY_LEVEL_STATE: number = 2;
+    export var PLAY_STATE: number = 3;
+    export var GAME_OVER_STATE: number = 4;
 
 }  

@@ -22,8 +22,18 @@ var objects;
             this.y = Math.floor(Math.random() * constants.SCREEN_HEIGHT);
             this.x = constants.BACKGROUND_RESET_WIDTH;
             // add drift to the enemy 
-            this._dx = Math.floor(Math.random() * 5) + 5;
-            this._dy = Math.floor(Math.random() * 4) - 2;
+            if (difficultyLevelSelected = 1) {
+                this._dx = Math.floor(Math.random() * 3) + 5;
+                this._dy = Math.floor(Math.random() * 2) - 2;
+            }
+            else if (difficultyLevelSelected = 2) {
+                this._dx = Math.floor(Math.random() * 9) + 5;
+                this._dy = Math.floor(Math.random() * 6) - 2;
+            }
+            else if (difficultyLevelSelected = 3) {
+                this._dx = Math.floor(Math.random() * 11) + 5;
+                this._dy = Math.floor(Math.random() * 10) - 2;
+            }
         };
         Enemy.prototype.checkBounds = function () {
             // check for enemy's x position

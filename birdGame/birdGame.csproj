@@ -63,10 +63,13 @@
     <Content Include="assets\images\bird.gif" />
     <Content Include="assets\images\chuck.jpg" />
     <Content Include="assets\images\chuckButton.png" />
+    <Content Include="assets\images\easyButton.png" />
     <Content Include="assets\images\egg.png" />
     <Content Include="assets\images\enemy.gif" />
     <Content Include="assets\images\enemybird.png" />
+    <Content Include="assets\images\hardButton.png" />
     <Content Include="assets\images\instructionButton.png" />
+    <Content Include="assets\images\mediumButton.png" />
     <Content Include="assets\images\play.png" />
     <Content Include="assets\images\playagainbutton.png" />
     <Content Include="assets\images\playButton.png" />

@@ -45,7 +45,7 @@ var states;
         PlayerSelect.prototype.player1ButtonClicked = function () {
             this.game.removeAllChildren();
             stage.removeChild(this.game);
-            currentState = constants.PLAY_STATE;
+            currentState = constants.DIFFICULTY_LEVEL_STATE;
             birdSelected = constants.PLAYER1;
             stateChanged = true;
         };
@@ -53,7 +53,7 @@ var states;
         PlayerSelect.prototype.player2ButtonClicked = function () {
             this.game.removeAllChildren();
             stage.removeChild(this.game);
-            currentState = constants.PLAY_STATE;
+            currentState = constants.DIFFICULTY_LEVEL_STATE;
             birdSelected = constants.PLAYER2;
             stateChanged = true;
         };
