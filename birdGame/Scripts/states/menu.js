@@ -27,7 +27,7 @@ var states;
             // initiate and adding instructionbutton label to screen
             this.instructionButton = new objects.Button("instructionbutton", constants.SCREEN_CENTER_WIDTH + 150, 400);
             this.game.addChild(this.instructionButton);
-            this.instructionButton.on("click", this.playButtonClicked, this);
+            this.instructionButton.on("click", this.instructionButtonClicked, this);
             // initiate and adding playbutton label to screen
             this.playButton = new objects.Button("playbutton", constants.SCREEN_CENTER_WIDTH - 150, 400);
             this.game.addChild(this.playButton);
@@ -40,6 +40,12 @@ var states;
             this.game.removeAllChildren();
             stage.removeChild(this.game);
             currentState = constants.SELECT_PLAYER_STATE;
+            stateChanged = true;
+        };
+        Menu.prototype.instructionButtonClicked = function () {
+            this.game.removeAllChildren();
+            stage.removeChild(this.game);
+            currentState = constants.INSTRUCITON_STATE;
             stateChanged = true;
         };
         // UPDATE METHOD

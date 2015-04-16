@@ -31,11 +31,11 @@ var states;
             selectPlayerLabel.regY = selectPlayerLabel.getMeasuredHeight() * 0.5;
             this.game.addChild(selectPlayerLabel);
             // initiate and adding instructionbutton label to screen
-            this.player1Button = new objects.Button("redButton", constants.SCREEN_CENTER_WIDTH + 150, 400);
+            this.player1Button = new objects.Button("redButton", constants.SCREEN_CENTER_WIDTH - 150, 400);
             this.game.addChild(this.player1Button);
             this.player1Button.on("click", this.player1ButtonClicked, this);
             // initiate and adding playbutton label to screen
-            this.player2Button = new objects.Button("chuckButton", constants.SCREEN_CENTER_WIDTH - 150, 400);
+            this.player2Button = new objects.Button("chuckButton", constants.SCREEN_CENTER_WIDTH + 150, 400);
             this.game.addChild(this.player2Button);
             this.player2Button.on("click", this.player2ButtonClicked, this);
             // adding game object to stage

@@ -15,6 +15,7 @@
 /// <reference path="objects/button.ts" />
 /// <reference path="states/gameover.ts" />
 /// <reference path="states/menu.ts" />
+/// <reference path="states/instruction.ts" />
 /// <reference path="states/playerselect.ts" />
 /// <reference path="states/difficultylevel.ts" />
 /// <reference path="states/play.ts" />
@@ -45,6 +46,7 @@ var play;
 var selectPlayer;
 var difficultyLevel;
 var menu;
+var instruction;
 // asset manifest - array of asset objects
 var manifest = [
     { id: "red", src: "assets/images/red.jpg" },
@@ -59,6 +61,7 @@ var manifest = [
     { id: "mediumbutton", src: "assets/images/mediumButton.png" },
     { id: "hardbutton", src: "assets/images/hardButton.png" },
     { id: "instructionbutton", src: "assets/images/instructionButton.png" },
+    { id: "mainMenuButton", src: "assets/images/mainmenuButton.png" },
     { id: "tryAgainButton", src: "assets/images/playagainbutton.png" },
     { id: "gameSound", src: "assets/audio/game.ogg" },
     { id: "moneySound", src: "assets/audio/moneysound.wav" },
@@ -105,6 +108,10 @@ function changeState(state) {
             // Instantiate Menu State
             menu = new states.Menu();
             currentStateFunction = menu;
+            break;
+        case constants.INSTRUCITON_STATE:
+            instruction = new states.Instruction();
+            currentStateFunction = instruction;
             break;
         case constants.PLAY_STATE:
             // Instantiate Play State

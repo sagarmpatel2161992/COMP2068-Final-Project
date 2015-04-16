@@ -35,11 +35,10 @@
             }
         }
 
-
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++
-        public update() {
-            this.x -= this.dx;
-            this.checkBounds();
+        public update() {          
+                this.x -= this.dx;
+                this.checkBounds();
         }
     }
 }     

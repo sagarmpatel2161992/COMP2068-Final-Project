@@ -31,13 +31,22 @@ module states {
             this.background = new objects.Background();
             this.game.addChild(this.background);
             
+            if (finalScore >= 1500) {
+                var winLabel: objects.Label = new objects.Label("You Won the Game", constants.SCREEN_CENTER_WIDTH, 20);
+                winLabel.font = "80px Consolas";
+                winLabel.regX = winLabel.getMeasuredWidth() * 0.5;
+                winLabel.regY = winLabel.getMeasuredHeight() * 0.5;
+                this.game.addChild(winLabel);
+            }
+
             // initiate and adding birdgame label to screen
             var birdGameLabel: objects.Label = new objects.Label("BIRD GAME", constants.SCREEN_CENTER_WIDTH, 100);
             birdGameLabel.font = "80px Consolas";
             birdGameLabel.regX = birdGameLabel.getMeasuredWidth() * 0.5;
             birdGameLabel.regY = birdGameLabel.getMeasuredHeight() * 0.5;
             this.game.addChild(birdGameLabel);
-            
+                        
+
             // initiate and add gameoverlabel to game object 
             var selectDifficultyLabel: objects.Label = new objects.Label("SELECT DIFFICULTY LEVEL", constants.SCREEN_CENTER_WIDTH, 200);
             selectDifficultyLabel.font = "40px Consolas";
@@ -71,6 +80,8 @@ module states {
             stage.removeChild(this.game);
             currentState = constants.PLAY_STATE;
             birdSelected = constants.PLAYER1;
+            difficultyLevelSelected = constants.EASY;
+            console.log(difficultyLevelSelected);
             stateChanged = true;
         }
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -78,7 +89,9 @@ module states {
             this.game.removeAllChildren();
             stage.removeChild(this.game);
             currentState = constants.PLAY_STATE;
+            difficultyLevelSelected = constants.MEDIUM;
             birdSelected = constants.PLAYER2;
+            console.log(difficultyLevelSelected);
             stateChanged = true;
         }
 
@@ -88,6 +101,8 @@ module states {
             stage.removeChild(this.game);
             currentState = constants.PLAY_STATE;
             birdSelected = constants.PLAYER2;
+            difficultyLevelSelected = constants.HIGH;
+            console.log(difficultyLevelSelected);
             stateChanged = true;
         }
         // UPDATE METHOD

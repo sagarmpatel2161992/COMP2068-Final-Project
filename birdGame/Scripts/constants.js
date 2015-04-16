@@ -1,3 +1,4 @@
+/// <reference path="game.ts" />
 var constants;
 (function (constants) {
     // variable for font property
@@ -22,9 +23,10 @@ var constants;
     constants.HIGH = 3;
     // States Constants
     constants.MENU_STATE = 0;
-    constants.SELECT_PLAYER_STATE = 1;
-    constants.DIFFICULTY_LEVEL_STATE = 2;
-    constants.PLAY_STATE = 3;
-    constants.GAME_OVER_STATE = 4;
+    constants.INSTRUCITON_STATE = 1;
+    constants.SELECT_PLAYER_STATE = 2;
+    constants.DIFFICULTY_LEVEL_STATE = 3;
+    constants.PLAY_STATE = 4;
+    constants.GAME_OVER_STATE = 5;
 })(constants || (constants = {}));
 //# sourceMappingURL=constants.js.map

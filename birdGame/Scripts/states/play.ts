@@ -46,7 +46,7 @@ module states {
             }
 
             // Add enemybird to game
-            for (var enemyBird = constants.ENEMY_NUM; enemyBird > 0; enemyBird--) {
+            for (var enemyBird = constants.ENEMY_NUM + difficultyLevelSelected; enemyBird > 0; enemyBird--) {
                 enemy[enemyBird] = new objects.Enemy();
                 this.game.addChild(enemy[enemyBird]);
             }
@@ -109,7 +109,7 @@ module states {
 
             // check if lives is greater than 0 (player still got lives)
             if (this.scoreboard.lives > 0) {
-                for (var enemyBird = constants.ENEMY_NUM; enemyBird > 0; enemyBird--) {
+                for (var enemyBird = constants.ENEMY_NUM+difficultyLevelSelected; enemyBird > 0; enemyBird--) {
                     enemy[enemyBird].update();
                     this.checkCollision(enemy[enemyBird]);
                 }
@@ -136,6 +136,15 @@ module states {
                 }
                 currentState = constants.GAME_OVER_STATE; // set game over state as current state
                 stateChanged = true;
+            }
+
+            if (this.scoreboard.score > 1500) {
+                createjs.Sound.stop();
+                this.game.removeAllChildren();
+                //stage.removeChild(game);
+                stage.removeAllChildren();  
+                currentState = constants.DIFFICULTY_LEVEL_STATE; // set game over state as current state
+                stateChanged = true;  
             }
 
         } // update method end

@@ -1,4 +1,6 @@
-﻿module constants {
+﻿/// <reference path="game.ts" />
+
+module constants {
     // variable for font property
     export var FONT_SIZE: string = "40px";
     export var FONT_FAMILY: string = "Consolas";
@@ -14,7 +16,8 @@
     // player variable
     export var MONEY_NUM: number = 1;
     export var PLAYER_LIVES: number = 5;
-    export var ENEMY_NUM: number = 3;
+    export var ENEMY_NUM: number =3;
+              
     export var PLAYER1: number = 1;
     export var PLAYER2: number = 2;
 
@@ -23,15 +26,12 @@
     export var MEDIUM: number = 2;
     export var HIGH: number = 3;
 
-
-
-  
-
     // States Constants
     export var MENU_STATE: number = 0;    
-    export var SELECT_PLAYER_STATE: number = 1;
-    export var DIFFICULTY_LEVEL_STATE: number = 2;
-    export var PLAY_STATE: number = 3;
-    export var GAME_OVER_STATE: number = 4;
+    export var INSTRUCITON_STATE: number = 1;
+    export var SELECT_PLAYER_STATE: number = 2;
+    export var DIFFICULTY_LEVEL_STATE: number = 3;
+    export var PLAY_STATE: number = 4;
+    export var GAME_OVER_STATE: number = 5;
 
 }  
